@@ -19,9 +19,9 @@ def main():
 
             price = Decimal(row["price_man_yen"])
             unit_price = (price / Decimal(area)).quantize(
-                Decimal("0.01"), rounding=ROUND_HALF_UP
+                Decimal("1"), rounding=ROUND_HALF_UP
             )
-            print(f"{mansion_id}: {unit_price:.2f} 万円/㎡")
+            print(f"{mansion_id}: {unit_price:.0f} 万円/㎡")
             calculated += 1
 
     print(f"算出{calculated}件、算出不可{missing_area}件")
