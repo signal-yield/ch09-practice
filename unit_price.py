@@ -16,8 +16,8 @@ def main():
                 unavailable += 1
             else:
                 unit_price = Decimal(row["price_man_yen"]) / Decimal(area)
-                rounded_price = unit_price.quantize(Decimal("0.01"), rounding=ROUND_HALF_UP)
-                result = f"{rounded_price:.2f} 万円/㎡"
+                rounded_price = unit_price.quantize(Decimal("1"), rounding=ROUND_HALF_UP)
+                result = f"{rounded_price:.0f} 万円/㎡"
                 calculated += 1
 
             print(f"{row['id']}: {result}")
